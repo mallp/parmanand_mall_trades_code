@@ -2,16 +2,21 @@ package com.interview.barclays.traders.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class TradesEntityPK implements Serializable{
+public class TradesEntityPK implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	@Column(name = "TRADE_ID", nullable = false)
 	String Trade_Id;
+
+	@Column(name = "VERSION", nullable = false)
 	Integer Version;
 
 	public String getTrade_Id() {

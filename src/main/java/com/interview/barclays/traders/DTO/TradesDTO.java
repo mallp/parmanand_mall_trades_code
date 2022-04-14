@@ -1,41 +1,35 @@
-package com.interview.barclays.traders.entity;
+package com.interview.barclays.traders.DTO;
 
-import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+public class TradesDTO {
 
-@Entity
-@Table(name = "Trades")
-public class TradesEntity {
-
-	@EmbeddedId
-	TradesEntityPK tradesEntityPK;
-
-	@Column(name = "COUNTER_PARTY_ID", nullable = false)
+	String Trade_Id;
+	Integer Version;
 	String Counter_Party_Id;
-
-	@Column(name = "BOOK_ID", nullable = false)
 	String Book_id;
-
-	@Column(name = "MATURITY_DATE", nullable = false)
 	Date Maturity_Date;
-
-	@Column(name = "CREATED_DATE", nullable = false)
 	Date Created_Date;
-
-	@Column(name = "EXPIRED", nullable = false)
 	char Expired;
 
-	public TradesEntityPK getTradesEntityPK() {
-		return tradesEntityPK;
+	public TradesDTO() {
+		super();
 	}
 
-	public void setTradesEntityPK(TradesEntityPK tradesEntityPK) {
-		this.tradesEntityPK = tradesEntityPK;
+	public String getTrade_Id() {
+		return Trade_Id;
+	}
+
+	public void setTrade_Id(String trade_Id) {
+		Trade_Id = trade_Id;
+	}
+
+	public Integer getVersion() {
+		return Version;
+	}
+
+	public void setVersion(Integer version) {
+		Version = version;
 	}
 
 	public String getCounter_Party_Id() {
@@ -80,7 +74,7 @@ public class TradesEntity {
 
 	@Override
 	public String toString() {
-		return "TradesEntity [tradesEntityPK=" + tradesEntityPK + ", Counter_Party_Id=" + Counter_Party_Id
+		return "TradesDTO [Trade_Id=" + Trade_Id + ", Version=" + Version + ", Counter_Party_Id=" + Counter_Party_Id
 				+ ", Book_id=" + Book_id + ", Maturity_Date=" + Maturity_Date + ", Created_Date=" + Created_Date
 				+ ", Expired=" + Expired + "]";
 	}
